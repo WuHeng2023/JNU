@@ -40,5 +40,14 @@ public class BowlingGameUnitTest {
         }
     }
 
+    @Test
+    public void testASpare()
+    {
+        game.roll(4);
+        game.roll(6);
+        game.roll(7);
+        repeatedRoll(0,17);
+        assertEquals(24, game.score());
+    }
 
 }
