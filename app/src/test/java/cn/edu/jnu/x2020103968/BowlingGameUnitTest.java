@@ -20,4 +20,10 @@ public class BowlingGameUnitTest {
         }
         assertEquals(0,game.score());
     }
+
+    @Test
+    public void test20Ones()
+    {
+
+    }
 }
