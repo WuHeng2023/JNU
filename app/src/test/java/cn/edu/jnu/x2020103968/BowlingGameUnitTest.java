@@ -40,9 +40,5 @@ public class BowlingGameUnitTest {
         }
     }
 
-    @Test
-    public void testASpare()
-    {
-        
-    }
+
 }
