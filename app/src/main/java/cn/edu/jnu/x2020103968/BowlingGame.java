@@ -9,19 +9,25 @@ public class BowlingGame {
 
     public int score() {
         int totalScore=0;
-        for(int scoreIndex=0;scoreIndex<pins.length;scoreIndex++)
+        int currentFrameScoreIndex=0;
+        for(int currentFrame=0;currentFrame<10;currentFrame++)
         {
-            totalScore+=pins[scoreIndex];
-            //如果是补中，就把下下球分数计入
-            if(scoreIndex<19){
-                if(isASpare(scoreIndex)) {
-                    totalScore+=pins[scoreIndex+2];
-                }
-                if(isAStrike(scoreIndex)) {
-                    totalScore+=pins[scoreIndex+1];
-                    totalScore+=pins[scoreIndex+2];
-                }
+            totalScore+=pins[currentFrameScoreIndex];
+            totalScore+=pins[currentFrameScoreIndex+1];
+            if(isAStrike(currentFrameScoreIndex)) {
+//                totalScore+=pins[currentFrameScoreIndex+1];
+                totalScore+=pins[currentFrameScoreIndex+2];
             }
+            else if(isASpare(currentFrameScoreIndex)) {
+//                totalScore+=pins[currentFrameScoreIndex+1];
+                totalScore+=pins[currentFrameScoreIndex+2];
+                currentFrameScoreIndex++;
+            }
+            else{
+//                totalScore+=pins[currentFrameScoreIndex+1];
+                currentFrameScoreIndex++;
+            }
+            currentFrameScoreIndex++;
         }
         return totalScore;
     }
