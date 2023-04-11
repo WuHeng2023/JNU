@@ -50,4 +50,11 @@ public class BowlingGameUnitTest {
         assertEquals(24, game.score());
     }
 
+
+    //看到了第56min 写完了前三个测试 现在准备写第四个
+    @Test
+    public void testAStrike()
+    {
+
+    }
 }
