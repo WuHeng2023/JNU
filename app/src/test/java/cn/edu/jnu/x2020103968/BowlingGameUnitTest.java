@@ -43,11 +43,15 @@ public class BowlingGameUnitTest {
     @Test
     public void testASpare()
     {
-        game.roll(4);
-        game.roll(6);
+        rollASpare();
         game.roll(7);
         repeatedRoll(0,17);
         assertEquals(24, game.score());
+    }
+
+    private void rollASpare() {
+        game.roll(4);
+        game.roll(6);
     }
 
 
@@ -55,6 +59,14 @@ public class BowlingGameUnitTest {
     @Test
     public void testAStrike()
     {
+        rollAStrike();
+        game.roll(5);
+        game.roll(4);
+        repeatedRoll(0,16);
+        assertEquals(28, game.score());
+    }
 
+    private void rollAStrike() {
+        game.roll(10);
     }
 }

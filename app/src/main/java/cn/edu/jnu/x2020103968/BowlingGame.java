@@ -14,11 +14,23 @@ public class BowlingGame {
             totalScore+=pins[scoreIndex];
             //如果是补中，就把下下球分数计入
             if(scoreIndex<19){
-                if(10==pins[scoreIndex]+pins[scoreIndex+1]) {
+                if(isASpare(scoreIndex)) {
+                    totalScore+=pins[scoreIndex+2];
+                }
+                if(isAStrike(scoreIndex)) {
+                    totalScore+=pins[scoreIndex+1];
                     totalScore+=pins[scoreIndex+2];
                 }
             }
         }
         return totalScore;
+    }
+
+    private boolean isAStrike(int scoreIndex) {
+        return 10== pins[scoreIndex];
+    }
+
+    private boolean isASpare(int scoreIndex) {
+        return 10==pins[scoreIndex]+pins[scoreIndex +1];
     }
 }
