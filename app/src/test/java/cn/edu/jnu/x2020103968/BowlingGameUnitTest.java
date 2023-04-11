@@ -19,6 +19,7 @@ public class BowlingGameUnitTest {
         game = new BowlingGame();
     }
 
+    //测试1
     @Test
     public void test20Zeros()
     {
@@ -27,7 +28,7 @@ public class BowlingGameUnitTest {
     }
 
 
-
+    //测试2
     @Test
     public void test20Ones()
     {
@@ -40,6 +41,7 @@ public class BowlingGameUnitTest {
         }
     }
 
+    //测试3
     @Test
     public void testASpare()
     {
@@ -55,7 +57,7 @@ public class BowlingGameUnitTest {
     }
 
 
-    //看到了第56min 写完了前三个测试 现在准备写第四个
+    //测试4
     @Test
     public void testAStrike()
     {
@@ -69,4 +71,12 @@ public class BowlingGameUnitTest {
     private void rollAStrike() {
         game.roll(10);
     }
+
+    //测试5
+    @Test
+    public void testFullStrike()
+    {
+
+    }
+
 }
